@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>rotate</title>
+</head>
+
+<body>
+  <canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+  </canvas>
+  <script>
+  window.onload = function() {
+    var canvas = document.getElementById("canvas");
+
+    canvas.width = 800;
+    canvas.height = 800;
+
+    var context = canvas.getContext("2d");
+
+    r(context, 200, 200, 400, 400, 10, "#058", "red", 10*Math.PI/180);
+    r(context, 200, 200, 400, 400, 10, "#058", "green", -10*Math.PI/180);
+  }
+
+  function r(ctx, x, y, width, height, lineWidth, strokeStyle, fillStyle, angle) {
+    ctx.save();
+    ctx.rotate(angle);
+
+    ctx.beginPath();
+    ctx.rect(x, y, width, height);
+    ctx.closePath();
+
+    ctx.lineWidth = lineWidth;
+    ctx.strokeStyle = strokeStyle;
+    ctx.fillStyle = fillStyle;
+
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+  }
+  </script>
+</body>
+
+</html>

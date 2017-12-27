@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>textAlign</title>
 </head>
+
 <body>
-	<canvas id="canvas" style="border: 1px solid #aaa; display: block; margin: 50px auto;"></canvas>
+  <canvas id="canvas" style="border: 1px solid #aaa; display: block; margin: 50px auto;"></canvas>
+  <script type="text/javascript">
+  window.onload = function() {
+    var canvas = document.getElementById("canvas");
 
-	<script type="text/javascript">
-		window.onload=function(){
-			var canvas=document.getElementById("canvas");
+    canvas.width = 800;
+    canvas.height = 800;
 
-			canvas.width=800;
-			canvas.height=800;
+    var context = canvas.getContext("2d");
 
-			var context=canvas.getContext("2d");
+    context.fillStyle = "#058";
+    context.font = "40px bold san-serif";
 
-			context.fillStyle="#058";
-			context.font="40px bold san-serif";
+    context.textAlign = "left";
+    context.fillText("textAlign = left", 400, 100);
 
-			context.textAlign="left";
-			context.fillText("textAlign = left", 400, 100);
+    context.textAlign = "center";
+    context.fillText("textAlign = center", 400, 200);
 
-			context.textAlign="center";
-			context.fillText("textAlign = center", 400, 200);
+    context.textAlign = "right";
+    context.fillText("textAlign = right", 400, 300);
 
-			context.textAlign="right";
-			context.fillText("textAlign = right", 400, 300);
+    context.textAlign = "start";
+    context.fillText("textAlign = start", 400, 400);
 
-			context.strokeStyle="#888";
-			context.moveTo(400, 0);
-			context.lineTo(400, 800);
-			context.stroke();
-		}
-	</script>
+    context.textAlign = "end";
+    context.fillText("textAlign = end", 400, 500);
+
+    context.strokeStyle = "#888";
+    context.moveTo(400, 0);
+    context.lineTo(400, 800);
+    context.stroke();
+  }
+  </script>
 </body>
+
 </html>

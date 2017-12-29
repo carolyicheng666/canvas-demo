@@ -1,33 +1,33 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+  <meta charset="UTF-8">
+  <title></title>
 </head>
+
 <body>
-
-    <canvas id="canvas" style="display:block;margin:0 auto;border:1px solid #aaa;">
+  <canvas id="canvas" style="display:block;margin:0 auto;border:1px solid #aaa;">
     您的浏览器尚不支持canvas
-    </canvas>
+  </canvas>
+  <script>
+  var canvas = document.getElementById("canvas")
+  var context = canvas.getContext("2d")
+  var image = new Image()
 
-    <script>
-        var canvas = document.getElementById("canvas")
-        var context = canvas.getContext("2d")
-        var image = new Image()
+  window.onload = function() {
 
-        window.onload = function(){
+    canvas.width = 1300
+    canvas.height = 800
 
-            canvas.width = 1152
-            canvas.height = 768
-
-            image.src = "img.jpg"
-            image.onload = function(){
-                context.drawImage( image , 0 , 0 )
-            }
+    image.src = "img.jpg"
+    image.onload = function() {
+      context.drawImage(image, 100, 100, (image.width-100)/2, (image.height-100)/2, 200, 200, (image.width-100)/2, (image.height-100)/2)
+    }
 
 
-        }
-
-    </script>
+  }
+  </script>
 </body>
+
 </html>
